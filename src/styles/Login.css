@@ -1,9 +1,12 @@
 .login{
-  height: 50;
+  height: 12 cm;
   width: 50%;
   position: relative;
   padding: 50px;
   left: 25%;
   margin-top: 5%;
+  background-color: white;
+  border-radius: 1cm;
+  
 
 }
