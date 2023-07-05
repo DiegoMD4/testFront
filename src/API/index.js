@@ -14,3 +14,16 @@ export async function getElements() {
     console.log(error);
   }
 }
+export async function postElements() {
+  try {
+    const response = await axios({
+      url: `${baseUrl}/Musica`,
+      method: 'POST'
+    })
+
+    return response
+
+  } catch (error) {
+    console.log(error);
+  }
+}

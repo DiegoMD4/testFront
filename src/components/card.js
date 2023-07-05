@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getElements } from '../services/index.js';
+import { getElements } from '../API/index.js';
 
 export const Card = () => {
   const [bandas, setBanda] = useState([]);
@@ -17,17 +17,24 @@ export const Card = () => {
 
   return (
     <div>
-      {bandas.map((banda, index) => (
-        <div className='card' key={index}>
+      <div className='row'>
+        
+        {bandas.map((banda, index) => (
+          <div className='col' key={index}>
+        <div className='card'>
           <div className='card-header'>
             <h5>{banda.Artista_Banda}</h5>
           </div>
           <div className='card-body'>
             <p>{banda.Cancion}</p>
-            {banda.Enlace}
+             {banda.Enlace}
           </div>
         </div>
+        </div>
+
       ))}
+      </div>
+      
     </div>
   );
 };
