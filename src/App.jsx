@@ -2,7 +2,7 @@ import './App.css';
 import Musica from './pages/musica';
 import  Home  from './pages/home';
 import {Link, Routes, Route} from 'react-router-dom';
-import CrearForm from './components/CrearForm';
+import Formulario from './components/Formulario';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path='/Musica' element={<Musica></Musica>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
-        <Route path = '/CrearForm' element = {<CrearForm></CrearForm>}></Route>
+        <Route path = '/Formulario' element = {<Formulario></Formulario>}></Route>
       </Routes>
     </div>
     </>
