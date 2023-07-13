@@ -14,15 +14,29 @@ export async function getElements() {
     console.log(error);
   }
 }
-export async function postElements() {
+export async function postElements(values) {
   try {
     const response = await axios({
       url: `${baseUrl}/Musica`,
-      method: 'POST'
-    })
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      data: JSON.stringify(values) // Utiliza 'data' en lugar de 'body'
+    });
 
-    return response
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}
 
+export async function deleteElement(id) {
+  try {
+    const response = await axios({
+      url: `${baseUrl}/Musica/${id}`, // Agrega el ID del elemento al final de la URL
+      method: 'DELETE'
+    });
+
+    return response;
   } catch (error) {
     console.log(error);
   }

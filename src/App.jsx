@@ -1,6 +1,6 @@
 import './App.css';
-import Musica from './pages/musica';
-import  Home  from './pages/home';
+import Musica from './pages/Musica';
+import  Home  from './pages/Home';
 import {Link, Routes, Route} from 'react-router-dom';
 import Formulario from './components/Formulario';
 
