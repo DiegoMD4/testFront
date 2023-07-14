@@ -3,7 +3,7 @@ import {Formik, Field, Form, ErrorMessage} from 'formik'
 import { postElements } from '../API'
 
 function Formulario() {
-const [formularioEnviardo, setFormulario] = useState(false)
+const [formularioEnviado, setFormulario] = useState(false)
 
   return (
     <>
@@ -11,7 +11,8 @@ const [formularioEnviardo, setFormulario] = useState(false)
       initialValues={{
         artistaBanda: '',
         cancion: '',
-        enlace: ''
+        enlace: '',
+        pic: '',
       }}
       validate={(info)=>{
         let err = {}
@@ -34,7 +35,13 @@ const [formularioEnviardo, setFormulario] = useState(false)
           err.enlace = "No es una url válida"
 
         }
-        return err
+        /* if(!info.pic){
+          err.pic = 'Agregue una pic'
+        }else if(/\.(jpg|jpeg|png|gif|bmp)$/i.test(info.pic)){
+          err.pic = "No es un formato válido"
+
+        }
+        return err */
       }}
         onSubmit={(info, {resetForm}, )=>{
           resetForm();
@@ -65,8 +72,8 @@ const [formularioEnviardo, setFormulario] = useState(false)
                   />
                   <ErrorMessage name='cancion' component={()=> <div>{errors.cancion}</div>}/>
                 </div>
-                <div>
                   <label htmlFor="enlace">Enlace</label>
+                <div>
                   <Field 
                     type="text" 
                     id='enlace' 
@@ -75,8 +82,17 @@ const [formularioEnviardo, setFormulario] = useState(false)
                   />
                   <ErrorMessage name='enlace' component={()=> <div>{errors.enlace}</div>}/>
                 </div>
+                <div>
+                  <Field 
+                    type="file" 
+                    id='pic' 
+                    name='pic' 
+                    placeholder='imagen' 
+                  />
+                  <ErrorMessage name='pic' component={()=> <div>{errors.pic}</div>}/>
+                </div>
               <button type="submit">Enviar</button>
-              {formularioEnviardo && <p>Formulario enviado a la API</p>}
+              {formularioEnviado && <p>Formulario enviado a la API</p>}
             </Form> 
       )}
       </Formik>
