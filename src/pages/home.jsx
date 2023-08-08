@@ -2,9 +2,14 @@ import React from 'react'
 
 const Home = () => {
   return (
-    <div>
-        <h1>Home page</h1>
-    </div>
+    <>
+  <h1>Pagina principal</h1>
+    <section>
+        <article>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, deleniti voluptatibus vero id possimus suscipit numquam! Quo deserunt corrupti, ex quia saepe aspernatur, libero ullam sed aliquam, quod cum nam?</p>
+        </article>
+      </section>
+    </>
   )
 }
 

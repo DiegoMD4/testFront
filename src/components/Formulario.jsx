@@ -82,15 +82,15 @@ const [formularioEnviado, setFormulario] = useState(false)
                   />
                   <ErrorMessage name='enlace' component={()=> <div>{errors.enlace}</div>}/>
                 </div>
-                <div>
-                  <Field 
+                {/* <div>
+                  <Field
                     type="file" 
                     id='pic' 
                     name='pic' 
                     placeholder='imagen' 
                   />
                   <ErrorMessage name='pic' component={()=> <div>{errors.pic}</div>}/>
-                </div>
+                </div> */}
               <button type="submit">Enviar</button>
               {formularioEnviado && <p>Formulario enviado a la API</p>}
             </Form> 
