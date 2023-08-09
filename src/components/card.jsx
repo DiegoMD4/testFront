@@ -48,7 +48,7 @@ export const Card = () => {
                   <p>{banda.cancion}</p>
                   <p>id: {banda.id}</p>
                   {banda.enlace}
-                  <img className='img-thumbnail' src={banda.imagen} alt="band"/>
+                  {/* <img className='img-thumbnail' src={banda.imagen} alt="band"/> */}
               </div>
               <div className='card-footer'>
                     <button  className='btn btn-danger' onClick={() => handleDelete(banda.id)}>Eliminar</button>

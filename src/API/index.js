@@ -1,6 +1,5 @@
 import axios from 'axios'
 const baseUrl = process.env.REACT_APP_BASE_URL
-const FormData = require('form-data');
 
 
 export async function getElements() {
@@ -19,11 +18,11 @@ export async function getElements() {
 
 export async function postElements(values) {
   try {
-    const formData = new FormData();
-    formData.append('file', values.file); // Agrega el archivo al FormData
-
-    const response = await axios.post(`${baseUrl}/Musica`, formData, {
-      headers: { 'Content-Type': 'multipart/form-data' }
+    const response = await axios({
+      url: `${baseUrl}/Musica`,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      data: JSON.stringify(values) // Utiliza 'data' en lugar de 'body'
     });
 
     return response;

@@ -11,8 +11,8 @@ const [formularioEnviado, setFormulario] = useState(false)
       initialValues={{
         artistaBanda: '',
         cancion: '',
-        enlace: '',
-        pic: '',
+        enlace: ''
+        /* pic: '', */
       }}
       validate={(info)=>{
         let err = {}
@@ -35,13 +35,13 @@ const [formularioEnviado, setFormulario] = useState(false)
           err.enlace = "No es una url válida"
 
         }
-        /* if(!info.pic){
+         /* if(!info.pic){
           err.pic = 'Agregue una pic'
         }else if(/\.(jpg|jpeg|png|gif|bmp)$/i.test(info.pic)){
           err.pic = "No es un formato válido"
 
-        }
-        return err */
+        } */
+        return err 
       }}
         onSubmit={(info, {resetForm}, )=>{
           resetForm();
@@ -82,7 +82,7 @@ const [formularioEnviado, setFormulario] = useState(false)
                   />
                   <ErrorMessage name='enlace' component={()=> <div>{errors.enlace}</div>}/>
                 </div>
-                {/* <div>
+                {/*  <div>
                   <Field
                     type="file" 
                     id='pic' 
