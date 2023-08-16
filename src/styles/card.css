@@ -1,0 +1,21 @@
+section{
+    max-width: 50%;
+    margin-left: 23.5%;
+    
+}
+.contenedor{
+    border: solid black 3px;
+    margin-bottom: 15px;
+}
+
+.encabezado{
+    border: solid red 1px;
+    font-size: larger;
+}
+.pie{
+    border: solid blue 1px;
+    
+}
+.cuerpo{
+   word-wrap: break-word;
+}

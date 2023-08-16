@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getElements, deleteElement } from '../API/index.js';
+import '../styles/card.css';
 
 export const Card = () => {
   const [bandas, setBanda] = useState([]);
@@ -35,30 +36,26 @@ export const Card = () => {
   
 
   return (
-    <div>
-      <div className='row'>
+    <>
+      <section>
         
         {bandas.map((banda, index) => (
-          <div className='col' key={index}>
-            <div className='card'>
-              <div className='card-header'>
-                  <h5>{banda.artistaBanda}</h5>
-              </div>
-              <div className='card-body'>
-                  <p>{banda.cancion}</p>
-                  <p>id: {banda.id}</p>
-                  {banda.enlace}
-                  {/* <img className='img-thumbnail' src={banda.imagen} alt="band"/> */}
-              </div>
-              <div className='card-footer'>
-                    <button  className='btn btn-danger' onClick={() => handleDelete(banda.id)}>Eliminar</button>
-              </div>
+          <div className='contenedor' key={index}>
+            <header className='encabezado'>
+              {banda.artistaBanda}
+            </header>
+            <div className='cuerpo'>
+                Canción: {banda.cancion} <br />
+                Link: {banda.enlace} <br />
+                Fecha de subida: {banda.fechaPost} <br />
             </div>
-        </div>
-
-      ))}
-      </div>
+            <div className='pie'>
+              <button onClick={()=> handleDelete(banda.id)}>Eliminar</button>
+            </div>
+          </div>
+        ))}
+      </section>
       
-    </div>
+    </>
   );
 };

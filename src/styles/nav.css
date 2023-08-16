@@ -1,0 +1,23 @@
+.nav{
+    background-color: white;
+    color:black;
+    border-bottom: solid black 1px;
+    
+}
+
+ul{
+    list-style: none;
+    overflow: hidden;
+}
+
+li{
+    float: left;
+}
+
+nav ul li a {
+    display: block;  
+    padding: 10px 10px 0px 10px;
+    color: black;
+    text-decoration: none;
+  }
+

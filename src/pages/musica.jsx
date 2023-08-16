@@ -6,7 +6,7 @@ function Musica() {
   return (
     <>
       <h1>Musica</h1>
-      <Link to='/Formulario'>Añadir musica</Link>
+      <Link style={{float: 'right'}} to='/Formulario'>Añadir musica</Link>
        <Card/>
     </>
   )
