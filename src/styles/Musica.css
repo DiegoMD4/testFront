@@ -1,0 +1,18 @@
+.tittle1{
+	display: inline;
+}
+
+.anchor{
+    display: inline;
+    float: right; 
+    border: 1px solid ;
+    border-radius: 10px;
+    color: #ff0000;
+    background-color: #160929;
+}
+
+.anchor:hover{
+    background-color: #ff0000;
+    color: #160929;
+}
+

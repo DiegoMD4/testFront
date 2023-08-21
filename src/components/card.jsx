@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getElements, deleteElement } from '../API/index.js';
-import '../styles/card.css';
+import '../styles/Card.css';
 
 export const Card = () => {
   const [bandas, setBanda] = useState([]);
@@ -37,12 +37,12 @@ export const Card = () => {
 
   return (
     <>
-      <section>
+      <section className='sectionCard'>
         
         {bandas.map((banda, index) => (
           <div className='contenedor' key={index}>
             <header className='encabezado'>
-              {banda.artistaBanda}
+              <h3>{banda.artistaBanda}</h3>
             </header>
             <div className='cuerpo'>
                 Canción: {banda.cancion} <br />

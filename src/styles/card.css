@@ -1,21 +1,27 @@
-section{
+.sectionCard{
     max-width: 50%;
-    margin-left: 23.5%;
+    margin-left: 23.5%; 
+    margin-top: 20px;
     
 }
 .contenedor{
-    border: solid black 3px;
+    border: solid 1px;
+    border-radius: 10px;
     margin-bottom: 15px;
+    padding: 10px;
+    
+    
 }
 
 .encabezado{
-    border: solid red 1px;
+    /* border: solid red 1px; */
     font-size: larger;
 }
-.pie{
-    border: solid blue 1px;
+/* .pie{
+     border: solid blue 1px; 
     
-}
+} */
 .cuerpo{
    word-wrap: break-word;
+   
 }
