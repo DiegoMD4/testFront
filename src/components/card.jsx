@@ -50,7 +50,7 @@ export const Card = () => {
                 Fecha de subida: {banda.fechaPost} <br />
             </div>
             <div className='pie'>
-              <button onClick={()=> handleDelete(banda.id)}>Eliminar</button>
+              <button className='btn-eliminar-card' onClick={()=> handleDelete(banda.id)}>Eliminar</button>
             </div>
           </div>
         ))}

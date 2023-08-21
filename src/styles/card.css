@@ -1,16 +1,23 @@
 .sectionCard{
-    max-width: 50%;
-    margin-left: 23.5%; 
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 90%; 
     margin-top: 20px;
-    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 30px;
 }
 .contenedor{
     border: solid 1px;
     border-radius: 10px;
-    margin-bottom: 15px;
-    padding: 10px;
-    
-    
+    align-self: auto;
+    height: 350px;
+    width: 250px;
+    padding: 10px    
 }
 
 .encabezado{
@@ -24,4 +31,16 @@
 .cuerpo{
    word-wrap: break-word;
    
+}
+.btn-eliminar-card{
+    color: #ff0000;
+    background-color: #160929;
+    border: 1px solid ;
+    border-radius: 10px;
+    
+}
+.btn-eliminar-card:hover{
+    background-color: #ff0000;
+    color: #160929;
+
 }

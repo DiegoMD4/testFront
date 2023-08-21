@@ -9,6 +9,10 @@
 	bottom: 0;
 }
 
+.section-div{
+	margin-top: 15px;	
+}
+
 .theme {
 	color: #ff0000;
 	background-color: #160929;
@@ -31,33 +35,33 @@ background: radial-gradient(at left top, #CD3032, #172282);
 
 
 
-/* .col{
+ .col{
     border: 1px solid black;
 }
 
 .container{
     margin-top: 70px;
-} */
-/* 
+} 
+ 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
-* {
+/* * {
 	padding: 0px;
 	margin: 0;
 	box-sizing: border-box;
-}
+} */
 
-body {
+/* body {
 	background: #E8E8E8;
 	font-family: 'Open Sans', sans-serif;
-}
-
+} */
+/* 
 .contenedor {
 	min-height: 100vh;
 	display: flex;
 	align-items: flex-start;
 	justify-content: center;
-}
+} */
 
 .formulario {
 	min-width: 600px;
@@ -131,4 +135,4 @@ body {
 
 .formulario input[type="radio"] {
 	width: auto;
-} */
+} 
