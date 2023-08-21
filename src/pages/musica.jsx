@@ -1,12 +1,13 @@
 import React from 'react';
 import { Card } from '../components/Card';
 import { Link } from 'react-router-dom';
+import '../styles/Musica.css'
 
 function Musica() {
   return (
     <>
-      <h1>Musica</h1>
-      <Link to='/Formulario'>Añadir musica</Link>
+      <h1 className='tittle1'>Musica</h1>
+      <Link className='anchor' to='/Formulario'>Añadir musica</Link>
        <Card/>
     </>
   )
