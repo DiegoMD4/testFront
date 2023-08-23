@@ -44,3 +44,14 @@
     color: #160929;
 
 }
+
+ .pic-card{
+    width: 100px;
+    height: 100px;
+    margin-left: 5.5%;
+} 
+
+.aPic, .aPic:hover{
+    color: #ff0000;
+    /* text-decoration: none; */
+}

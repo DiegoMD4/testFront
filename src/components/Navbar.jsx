@@ -9,9 +9,9 @@ function Navbar() {
     <>
     <nav className='nav'>
             <div className= 'box'>
-              <Link to="/" >Home</Link>
-              <Link to="/Musica" >Musica</Link>
-              <Link to="" >Otro</Link>
+              <Link className='aNav' to="/" >Home</Link>
+              <Link className='aNav' to="/Musica" >Musica</Link>
+              <Link className='aNav' to="" >Otro</Link>
             </div>
     </nav>
     

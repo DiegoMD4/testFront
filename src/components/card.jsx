@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getElements, deleteElement } from '../API/index.js';
 import '../styles/Card.css';
+import { Link } from 'react-router-dom';
 
 export const Card = () => {
   const [bandas, setBanda] = useState([]);
@@ -46,8 +47,9 @@ export const Card = () => {
             </header>
             <div className='cuerpo'>
                 Canción: {banda.cancion} <br />
-                Link: {banda.enlace} <br />
+                Link:  <Link className='aPic' target='_blank' to={banda.enlace}>{banda.enlace}</Link>   <br />
                 Fecha de subida: {banda.fechaPost} <br />
+                {<img className='pic-card' src={banda.imagen} alt="banda-pic"/>}
             </div>
             <div className='pie'>
               <button className='btn-eliminar-card' onClick={()=> handleDelete(banda.id)}>Eliminar</button>

@@ -1,6 +1,7 @@
-import axios from 'axios'
-const baseUrl = process.env.REACT_APP_BASE_URL
+import FormData from 'form-data';
+import axios from 'axios';
 
+const baseUrl = process.env.REACT_APP_BASE_URL
 
 export async function getElements() {
   try {
@@ -18,11 +19,14 @@ export async function getElements() {
 
 export async function postElements(values) {
   try {
-    const response = await axios({
-      url: `${baseUrl}/Musica`,
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      data: JSON.stringify(values) // Utiliza 'data' en lugar de 'body'
+    const formData = new FormData();
+
+    formData.append('artistaBanda', values.artistaBanda);
+    formData.append('cancion', values.cancion);
+    formData.append('enlace', values.enlace);
+    formData.append('pic', values.pic); 
+    const response = await axios.post(`${baseUrl}/Musica`, formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
     });
 
     return response;
@@ -30,6 +34,7 @@ export async function postElements(values) {
     console.log(error);
   }
 }
+
 
 
 export async function deleteElement(id) {

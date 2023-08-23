@@ -9,6 +9,9 @@
     border-radius: 15px;
     color: #ff0000;
     background-color: #160929;
+    padding: 10px 10px 10px 10px;
+    text-decoration: none;
+    
 }
 
 .anchor:hover{
