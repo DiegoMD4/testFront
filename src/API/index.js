@@ -24,7 +24,7 @@ export async function postElements(values) {
     formData.append('artistaBanda', values.artistaBanda);
     formData.append('cancion', values.cancion);
     formData.append('enlace', values.enlace);
-    formData.append('pic', values.pic); 
+    formData.append('image', values.pic); 
     const response = await axios.post(`${baseUrl}/Musica`, formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
     });
@@ -41,7 +41,7 @@ export async function deleteElement(id) {
   try {
     const response = await axios({
       url: `${baseUrl}/Musica/${id}`, // Agrega el ID del elemento al final de la URL
-      method: 'DELETE'
+      method: 'GET'
     });
 
     return response;

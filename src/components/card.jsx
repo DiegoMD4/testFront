@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getElements, deleteElement } from '../API/index.js';
-import '../styles/Card.css';
 import { Link } from 'react-router-dom';
+
+// import '../styles/Card.css';
 
 export const Card = () => {
   const [bandas, setBanda] = useState([]);
@@ -38,25 +39,34 @@ export const Card = () => {
 
   return (
     <>
-      <section className='sectionCard'>
-        
-        {bandas.map((banda, index) => (
-          <div className='contenedor' key={index}>
-            <header className='encabezado'>
-              <h3>{banda.artistaBanda}</h3>
-            </header>
-            <div className='cuerpo'>
-                Canción: {banda.cancion} <br />
-                Link:  <Link className='aPic' target='_blank' to={banda.enlace}>{banda.enlace}</Link>   <br />
-                Fecha de subida: {banda.fechaPost} <br />
-                {<img className='pic-card' src={banda.imagen} alt="banda-pic"/>}
+      <section className='container p-4' >
+        <div className="row">
+          <div className="card-columns">
+
+            {bandas.map((banda, index) => (
+              <div className="card animated fadeInDown" key={index}>
+              <img src={banda.image_url} alt="album" className='card-img-top'/>
+              <div className="card-body">
+                <h5 className='card-title'>{banda.artistaBanda}</h5>
+                <p className='card-text'>{banda.Cancion}</p>
+                <p className='card-text'>{banda.fechaPost}</p>
+                {/* <Link className='' target='_blank' to={banda.enlace}>{banda.enlace}</Link> */}
+                <Link className='btn btn-primary btn-block' target='_blank' 
+                  to={`image/:id`}>View Profile
+                </Link> <hr />
+                <Link path={`image/${bandas.id}`} onClick={()=> handleDelete(banda.id)} class="btn btn-danger btn-block">
+                            Delete image
+                </Link>
+              </div>
             </div>
-            <div className='pie'>
-              <button className='btn-eliminar-card' onClick={()=> handleDelete(banda.id)}>Eliminar</button>
-            </div>
+            ))}
+
           </div>
-        ))}
+        </div>
       </section>
+    
+      
+        
       
     </>
   );

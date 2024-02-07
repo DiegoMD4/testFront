@@ -19,7 +19,7 @@ const [fileData, setFileData] = useState(null);
         artistaBanda: '',
         cancion: '',
         enlace: '',
-        pic: '',
+        image: '',
       }}
       validate={(info)=>{
         let err = {}
@@ -98,12 +98,12 @@ const [fileData, setFileData] = useState(null);
                  <div>
                   <Field
                     type="file" 
-                    id='pic' 
-                    name='pic' 
+                    id='image' 
+                    name='image' 
                     placeholder='imagen' 
                     onChange={handleFileChange}
                   />
-                  <ErrorMessage name='pic' component={()=> <div>{errors.pic}</div>}/>
+                  <ErrorMessage name='image' component={()=> <div>{errors.pic}</div>}/>
                 </div>
               <button type="submit">Enviar</button>
               {formularioEnviado && <p>Formulario enviado a la API</p>}
