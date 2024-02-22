@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { getElements, deleteElement } from '../API/index.js';
 import { Link } from 'react-router-dom';
+import TimeAgo from 'timeago-react';
 
-// import '../styles/Card.css';
 
 export const Card = () => {
   const [bandas, setBanda] = useState([]);
@@ -25,7 +25,7 @@ export const Card = () => {
 
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm('¿Estás seguro de que deseas eliminar este elemento?');
-  
+
     if (confirmDelete) {
       try {
         await deleteElement(id);
@@ -35,7 +35,7 @@ export const Card = () => {
       }
     }
   };
-  
+
 
   return (
     <>
@@ -45,29 +45,36 @@ export const Card = () => {
 
             {bandas.map((banda, index) => (
               <div className="card animated fadeInDown" key={index}>
-              <img src={banda.image_url} alt="album" className='card-img-top'/>
-              <div className="card-body">
-                <h5 className='card-title'>{banda.artistaBanda}</h5>
-                <p className='card-text'>{banda.Cancion}</p>
-                <p className='card-text'>{banda.fechaPost}</p>
-                {/* <Link className='' target='_blank' to={banda.enlace}>{banda.enlace}</Link> */}
-                <Link className='btn btn-primary btn-block' target='_blank' 
-                  to={`image/:id`}>View Profile
-                </Link> <hr />
-                <Link path={`image/${bandas.id}`} onClick={()=> handleDelete(banda.id)} class="btn btn-danger btn-block">
-                            Delete image
+                <Link className='' target='_blank' to={banda.enlace}>
+                  <img src={banda.image_url} alt="album" className='card-img-top' />
                 </Link>
+                <div className="card-body">
+                  <h5 className='card-title'>{banda.artistaBanda}</h5>
+                  <p className='card-text'>{banda.Cancion}</p>
+                  <p className='card-text'>
+                    <TimeAgo
+                      datetime={banda.fechaPost}
+                      locale='en'
+                    />
+                  </p>
+                  {/* <Link className='' target='_blank' to={banda.enlace}>{banda.enlace}</Link> */}
+                  <Link className='btn btn-primary btn-block' target='_blank'
+                    to={`image/:id`}>View Profile
+                  </Link> <hr />
+                  <Link path={`image/${bandas.id}`} onClick={() => handleDelete(banda.id)} class="btn btn-danger btn-block">
+                    Delete image
+                  </Link>
+                </div>
               </div>
-            </div>
             ))}
 
           </div>
         </div>
       </section>
-    
-      
-        
-      
+
+
+
+
     </>
   );
 };

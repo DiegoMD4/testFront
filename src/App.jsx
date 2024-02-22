@@ -12,7 +12,7 @@ function App() {
       </header>
       <section className='section-div'>
       <Routes>
-        <Route path='/Musica' element={<Musica></Musica>}></Route>
+        <Route path='/' element={<Musica></Musica>}></Route>
         <Route path = '/Formulario' element = {<Formulario></Formulario>}></Route>
       </Routes>
       </section>
