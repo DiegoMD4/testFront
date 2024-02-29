@@ -1,7 +1,10 @@
-import FormData from 'form-data';
+import { FormData } from 'formdata-node';
+
 import axios from 'axios';
 
-const baseUrl = process.env.REACT_APP_BASE_URL
+
+const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL
+console.log(baseUrl)
 
 export async function getElements() {
   try {
