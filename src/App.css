@@ -71,3 +71,7 @@
 .formulario input[type="radio"] {
 	width: auto;
 } 
+
+.section-div{
+	padding: 1rem 5rem;
+}

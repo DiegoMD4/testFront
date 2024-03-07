@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { getElements, deleteElement } from "../API/index.js";
 // import { Link } from "react-router-dom";
-// import TimeAgo from "timeago-react";
+import TimeAgo from "timeago-react";
 
-import '../styles/Card.css'
+import "../styles/Card.css";
 
 export const Card = () => {
   const [bandas, setBanda] = useState([]);
@@ -41,14 +41,26 @@ export const Card = () => {
 
   return (
     <>
-      <section className="seccion">
-        {bandas.map((banda, index)=>(
-          <div style={{border: "1px solid black"}} className="tarjeta" key={index}>
-            <h3>{banda.artistaBanda}</h3>
-            <img src={banda.image_url} alt="" />
-          </div>
-        ))}
-      </section>
+       
+        <div className="gallery animated fadeInDown">
+          {bandas.map((banda, index) => (
+            <div className="card" key={index}>
+              <img src={banda.image_url} alt="image recuperated from bandas" />
+              <footer>
+                <h4>{banda.artistaBanda}</h4>
+                <p>{banda.Cancion}</p>
+                <p>
+                  <TimeAgo datetime={banda.fechaPost} locale="en" />
+                </p>
+                <button className="btnOptions btn-blue">View Profile</button>
+                <hr />
+                <button className="btnOptions btn-red">Delete element</button>
+              </footer>
+            </div>
+          ))}
+        </div>
     </>
   );
 };
+
+

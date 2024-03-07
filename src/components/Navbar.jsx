@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Navbar.css';
+
 import {Link} from 'react-router-dom';
 
 
@@ -14,7 +14,7 @@ function Navbar() {
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <Link className="nav-link" to="/Musica">Musica</Link>
+          <Link className="nav-link" to="/">Musica</Link>
         </li>
         <li className="nav-item">
           <Link className="nav-link" to="/Formulario">Upload</Link>
