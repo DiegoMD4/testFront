@@ -24,20 +24,20 @@ export const Card = () => {
     }
   };
 
-  // const handleDelete = async (id) => {
-  //   const confirmDelete = window.confirm(
-  //     "¿Estás seguro de que deseas eliminar este elemento?"
-  //   );
+  const handleDelete = async (id) => {
+    const confirmDelete = window.confirm(
+      "¿Estás seguro de que deseas eliminar este elemento?"
+    );
 
-  //   if (confirmDelete) {
-  //     try {
-  //       await deleteElement(id);
-  //       await loadElements();
-  //     } catch (error) {
-  //       console.error("Error al eliminar el elemento:", error);
-  //     }
-  //   }
-  // };
+    if (confirmDelete) {
+      try {
+        await deleteElement(id);
+        await loadElements();
+      } catch (error) {
+        console.error("Error al eliminar el elemento:", error);
+      }
+    }
+  };
 
   return (
     <>
@@ -54,7 +54,7 @@ export const Card = () => {
                 </p>
                 <button className="btnOptions btn-blue">View Profile</button>
                 <hr />
-                <button className="btnOptions btn-red">Delete element</button>
+                <button className="btnOptions btn-red" onClick={()=> handleDelete(banda.id)}>Delete element</button>
               </footer>
             </div>
           ))}
