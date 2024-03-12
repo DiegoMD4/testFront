@@ -1,0 +1,31 @@
+.ProfileCard {
+  position: fixed; /* Posición fija para que siempre esté en el centro de la pantalla */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centrar el modal exactamente en el medio de la pantalla */
+  width: 50vw; /* Ancho del modal como porcentaje del ancho de la ventana */
+  height: 50vh; /* Altura del modal como porcentaje de la altura de la ventana */
+  background-color: white; /* Fondo blanco del modal */
+  border: 5px solid black; /* Borde de 5px */
+  display: flex;
+  align-items: center; /* Alineación vertical de los elementos internos */
+  justify-content: center; /* Alineación horizontal de los elementos internos */
+  box-sizing: border-box; /* Para que el ancho y la altura incluyan el contenido, el relleno y los bordes */
+  padding: 20px; /* Espacio interior alrededor del contenido */
+  z-index: 1000; /* Asegurarse de que el modal esté sobre otros elementos */
+}
+
+/* Puedes agregar estilos adicionales para el botón de cerrar si lo deseas */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.img-Modal{
+  width: 50%;
+}

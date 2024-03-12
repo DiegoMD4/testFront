@@ -1,14 +1,14 @@
-import { getElements } from "../API";
+import { getElements} from "../../API";
 import { useState, useEffect } from "react";
 
-export const useBandas = async () =>{
-    try {
-        const response = await getElements();
-  
-        if (response.status === 200) {
-          return response.data
-        }
-      } catch (error) {
-        console.error("Error al cargar los elementos:", error);
-      }
+export const useBandas = () =>{
+  const [bandas, setBanda] = useState([]);
+
+  const refreshGallery = () =>{
+    getElements().then((newBanda) => setBanda(newBanda))
+  }
+  useEffect(refreshGallery, [bandas]);
+
+  return {bandas, refreshGallery}
 }
+

@@ -1,29 +1,25 @@
-import React, { useEffect, useState } from "react";
-import { getElements, deleteElement } from "../API/index.js";
-// import { Link } from "react-router-dom";
-import TimeAgo from "timeago-react";
-
+import { deleteElement } from "../API/index.js";
+import { useBandas } from "../services/hooks/useBandas.js";
+import { ViewProfile } from "../modals/viewProfile.jsx";
+// import TimeAgo from "timeago-react";
 import "../styles/Card.css";
+import { useState } from "react";
 
 export const Card = () => {
-  const [bandas, setBanda] = useState([]);
 
-  useEffect(() => {
-    loadElements();
-  }, []);
+const {bandas, refreshGallery} = useBandas()
+const [isModalOpen, setIsModalOpen] = useState(false)
+const [selectedBanda, setSelectedBanda] = useState(null);
 
-  const loadElements = async () => {
-    try {
-      const response = await getElements();
-
-      if (response.status === 200) {
-        setBanda(response.data);
-      }
-    } catch (error) {
-      console.error("Error al cargar los elementos:", error);
-    }
+  const openModal = (banda) => {
+    setSelectedBanda(banda);
+    setIsModalOpen(true);
   };
 
+  const closeModal = () => {
+    setSelectedBanda(null);
+    setIsModalOpen(false);
+  };
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm(
       "¿Estás seguro de que deseas eliminar este elemento?"
@@ -32,7 +28,7 @@ export const Card = () => {
     if (confirmDelete) {
       try {
         await deleteElement(id);
-        await loadElements();
+        refreshGallery();
       } catch (error) {
         console.error("Error al eliminar el elemento:", error);
       }
@@ -41,24 +37,24 @@ export const Card = () => {
 
   return (
     <>
-       
         <div className="gallery animated fadeInDown">
-          {bandas.map((banda, index) => (
-            <div className="card" key={index}>
-              <img src={banda.image_url} alt="image recuperated from bandas" />
+          {bandas.map((banda) => (
+            <div className="cardView" key={banda.id}>
+              <img src={banda.url} alt="image recuperated from bandas" />
               <footer>
-                <h4>{banda.artistaBanda}</h4>
-                <p>{banda.Cancion}</p>
+                <h4>{banda.title}</h4>
+                {/* <p>{banda.Cancion}</p>
                 <p>
                   <TimeAgo datetime={banda.fechaPost} locale="en" />
-                </p>
-                <button className="btnOptions btn-blue">View Profile</button>
+                </p> */}
+                <button className="btnOptions btn-blue" onClick={()=> openModal(banda)}>View Profile</button>
                 <hr />
                 <button className="btnOptions btn-red" onClick={()=> handleDelete(banda.id)}>Delete element</button>
               </footer>
             </div>
           ))}
         </div>
+        {isModalOpen && <ViewProfile banda={selectedBanda} closeModal={closeModal} />}
     </>
   );
 };
