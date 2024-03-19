@@ -1,15 +1,12 @@
-import React from 'react';
-import { Card } from '../components/Card';
-
-
+import React from "react";
+import { Card } from "../components/Card";
 
 function Musica() {
   return (
     <>
-       <Card/>
+      <Card />
     </>
-  )
+  );
 }
 
-export default Musica
-
+export default Musica;

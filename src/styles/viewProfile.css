@@ -1,31 +1,52 @@
 .ProfileCard {
-  position: fixed; /* Posición fija para que siempre esté en el centro de la pantalla */
+  position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centrar el modal exactamente en el medio de la pantalla */
-  width: 50vw; /* Ancho del modal como porcentaje del ancho de la ventana */
-  height: 50vh; /* Altura del modal como porcentaje de la altura de la ventana */
-  background-color: white; /* Fondo blanco del modal */
-  border: 5px solid black; /* Borde de 5px */
+  transform: translate(-50%, -50%);
+  width: 70%;
+  max-width: 500px;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  z-index: 1000;
   display: flex;
-  align-items: center; /* Alineación vertical de los elementos internos */
-  justify-content: center; /* Alineación horizontal de los elementos internos */
-  box-sizing: border-box; /* Para que el ancho y la altura incluyan el contenido, el relleno y los bordes */
-  padding: 20px; /* Espacio interior alrededor del contenido */
-  z-index: 1000; /* Asegurarse de que el modal esté sobre otros elementos */
+  flex-direction: row;
+  /* Cambiado a fila para que la imagen y el contenido estén en la misma línea */
+  align-items: flex-start;
+  /* Alinea los elementos al principio del eje Y */
 }
 
-/* Puedes agregar estilos adicionales para el botón de cerrar si lo deseas */
+.ProfileCard img {
+  max-width: 100%;
+  /* La imagen ahora se ajustará al ancho del contenedor */
+  height: auto;
+  max-height: 300px;
+  /* Altura máxima para la imagen */
+  border-radius: 10px;
+  /* Bordes redondeados para la imagen */
+  margin-right: 20px;
+  /* Margen a la derecha de la imagen */
+}
+
 .close-button {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: none;
+  background-color: transparent;
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: #333;
 }
 
-.img-Modal{
-  width: 50%;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
